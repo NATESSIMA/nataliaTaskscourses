@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+<img src="Formula1_logo93.png">
+
+</div>
+<div>
+
+    <img src="images.jpg" id="car1">
+
+</div>
+<div>
+
+    <img src="Sin título.jpg" id="car2">
+</div>
+    
+</body>
+</html>
+<script>
+    const SPEED=10
+    var xCar1 = 0;
+    var xCar2 = 0;
+    document.querySelector("body").addEventListener("keydown",(event)=>{
+     if (event.code =="KeyP"){
+        xCar1=xCar1+SPEED;
+        document.querySelector("#car1").style.marginLeft=xCar1+"px"; }
+    else if (event.code=="KeyQ"){
+        xCar2=xCar2+SPEED;
+        document.querySelector("#car2").style.marginLeft=xCar2+"px";
+    }})
+if (car1>screen.width){
+    alert("Ha vencido el coche numero 1");
+    }
+    else if(xCar2>=screen.width){
+        alert("Ha vencido el coche numero2");
+    }
+
+
+</script>

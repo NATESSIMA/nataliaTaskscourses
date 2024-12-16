@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ej_14</title>
+</head>
+<body>
+    <h1>ej_14 tipos</h1>
+    <div>Apeido<input type = "texto" name="" id="texto" id="texto"></div>
+    <div>Eddad<input type = "number" name="" id="numero" is="number"></div>
+    <div><label for="sino">Si/No</label> <input type="checkbox" name="" id="sino"></div>
+    <div><button id="Aceptar">Aceptar</button></div>
+</body>
+</html>
+<script>
+   
+    var nombre;
+    var numero;
+    var sino;
+document.querySelector("#Aceptar").addEventListener("click", ()=>{
+    let nombre = parseInt(document.querySelector("texto").value);
+    let numero = parseInt(document.querySelector("numero").value);
+    let sino = document.querySelector("·sino").checked;
+   nombre = document.querySelector("#texto").value;
+    console.log(nombre);
+    console.log(numero);
+    console.log(sino);
+    console.log(typeof nombre);
+    console.log(typeof numero);
+    console.log(typeof sino);
+})
+
+
+</script>

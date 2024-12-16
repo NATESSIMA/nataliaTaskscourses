@@ -1,0 +1,49 @@
+/* Estilo general de la página */
+body {
+  font-family: Arial, sans-serif;
+  padding: 0;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+/* Contenedor de las imágenes */
+div {
+  margin: 20px;
+}
+
+/* Imagen de la Fórmula 1 */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+#car1, #car2 {
+  width: 200px;
+}
+
+/* Efecto cuando se pasa el mouse por encima de las imágenes */
+img:hover {
+  transform: scale(1.05);
+}
+
+/* Indicaciones de control */
+body::before {
+  content: "Press 'P' to move Car 1, 'Q' to move Car 2";
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+}

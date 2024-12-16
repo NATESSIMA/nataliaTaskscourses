@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Film Gallery</h1>
+</header>
+
+<div class="controls">
+    <button id="actionButton">Sort by Action</button>
+    <button id="comedyButton">Sort by Comedy</button>
+    <input type="text" id="searchInput" placeholder="Search by title">
+</div>
+
+<div class="container" id="filmContainer">
+    <!-- Film posters will be displayed here -->
+    <div class="film" data-genre="action" data-title="Inception">
+        <img src="https://via.placeholder.com/150x225?text=Inception" alt="Inception">
+        <div class="title">Inception</div>
+    </div>
+    <div class="film" data-genre="comedy" data-title="The Hangover">
+        <img src="https://via.placeholder.com/150x225?text=The+Hangover" alt="The Hangover">
+        <div class="title">The Hangover</div>
+    </div>
+    <div class="film" data-genre="action" data-title="Mad Max: Fury Road">
+        <img src="https://via.placeholder.com/150x225?text=Mad+Max" alt="Mad Max: Fury Road">
+        <div class="title">Mad Max: Fury Road</div>
+    </div>
+    <div class="film" data-genre="comedy" data-title="Superbad">
+        <img src="https://via.placeholder.com/150x225?text=Superbad" alt="Superbad">
+        <div class="title">Superbad</div>
+    </div>
+    <div class="film" data-genre="action" data-title="The Dark Knight">
+        <img src="https://via.placeholder.com/150x225?text=The+Dark+Knight" alt="The Dark Knight">
+        <div class="title">The Dark Knight</div>
+    </div>
+    <div class="film" data-genre="comedy" data-title="Step Brothers">
+        <img src="https://via.placeholder.com/150x225?text=Step+Brothers" alt="Step Brothers">
+        <div class="title">Step Brothers</div>
+    </div>
+    <div class="film" data-genre="action" data-title="Die Hard">
+        <img src="https://via.placeholder.com/150x225?text=Die+Hard" alt="Die Hard">
+        <div class="title">Die Hard</div>
+    </div>
+    <div class="film" data-genre="comedy" data-title="Dumb and Dumber">
+        <img src="https://via.placeholder.com/150x225?text=Dumb+and+Dumber" alt="Dumb and Dumber">
+        <div class="title">Dumb and Dumber</div>
+    </div>
+    <div class="film" data-genre="action" data-title="The Avengers">
+        <img src="https://via.placeholder.com/150x225?text=The+Avengers" alt="The Avengers">
+        <div class="title">The Avengers</div>
+    </div>
+    <div class="film" data-genre="comedy" data-title="Ferris Bueller's Day Off">
+        <img src="https://via.placeholder.com/150x225?text=Ferris+Bueller" alt="Ferris Bueller's Day Off">
+        <div class="title">Ferris Bueller's Day Off</div>
+    </div>
+</div>
+
+<script>
+    // Add event listeners for the buttons
+    document.getElementById('actionButton').addEventListener('click', function() {
+        sortByGenre('action');
+    });
+
+    document.getElementById('comedyButton').addEventListener('click', function() {
+        sortByGenre('comedy');
+    });
+
+    // Add event listener for the search input
+    document.getElementById('searchInput').addEventListener('keyup', function() {
+        searchByTitle();
+    });
+
+    // Function to sort films by genre
+    function sortByGenre(genre) {
+        const films = document.querySelectorAll('.film');
+        films.forEach(film => {
+            if (film.getAttribute('data-genre') !== genre) {
+                film.style.display = 'none';  // Hide films that don't match the genre
+            } else {
+                film.style.display = '';  // Show films that match the genre
+            }
+        });
+    }
+
+    // Function to search films by title
+    function searchByTitle() {
+        const query = document.getElementById('searchInput').value.toLowerCase();
+        const films = document.querySelectorAll('.film');
+        films.forEach(film => {
+            const title = film.getAttribute('data-title').toLowerCase();
+            if (title.includes(query)) {
+                film.style.display = '';  // Show film if title matches query
+            } else {
+                film.style.display = 'none';  // Hide film if title doesn't match query
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
